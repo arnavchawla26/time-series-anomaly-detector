@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tsanomaly"
+version = "0.1.0"
+description = "Dependency-free time series anomaly detection: classical seasonal decomposition plus z-score / modified-z-score / IQR / rolling-z-score detectors."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Arnav Chawla" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+tsanomaly = "tsanomaly.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tsanomaly*"]
